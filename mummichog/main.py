@@ -13,16 +13,19 @@
 
 
 '''
-mummichog 2,
+mummichog -
 pathway and network analysis for metabolomics
 
 @author: Shuzhao Li
 
 Online documentation: http://mummichog.org
-Major change in data structure from version 1. 
-Only the default metabolic model (human_model_mfn) and a worm model are ported to version 2 so far.
-This is intended to be the branch of command line version. 
-A server version is upcoming, where metabolic models are stored a separate online database.
+
+Refactoring to
+* uncouple data visualization in core package
+* standardize I/O via JSON
+
+
+
 '''
 
 

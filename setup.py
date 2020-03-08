@@ -2,12 +2,14 @@
 
 from setuptools import setup
 
+from mummichog.config import VERSION
+
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
   name='mummichog',
-  version='2.3.3',
+  version=VERSION,
 
   author='Shuzhao Li, Andrei Todor',
   author_email='shuzhao.li@gmail.com',

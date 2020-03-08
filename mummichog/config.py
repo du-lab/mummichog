@@ -14,8 +14,8 @@ configuration and utility functions of mummichog
 
 '''
 
-VERSION = '2.3.3-20200213'          # Python 3 only
-RELEASE = True
+VERSION = '2.4.0-a'
+RELEASE = False
 USE_DEBUG = False
 
 
@@ -37,7 +37,7 @@ RETENTION_TIME_TOLERANCE_FRAC = 0.02
 PROTON = 1.00727646677
 
 
-# currency metaboites of ubiquitous presence
+# currency metabolites of ubiquitous presence
 currency = ['C00001', 'C00080', 'C00007', 'C00006', 'C00005', 'C00003',
             'C00004', 'C00002', 'C00013', 'C00008', 'C00009', 'C00011', 
             'G11113', '',
@@ -160,9 +160,11 @@ def adduct_function(mw, mode):
                 (mw/3 + 0.3344 + PROTON, 'M(C13)+3H[3+]'),
                 (mw +1.9958 + PROTON, 'M(S34)+H[1+]'),
                 (mw +1.9972 + PROTON, 'M(Cl37)+H[1+]'),
-                (mw + 21.9820 + PROTON, 'M+Na[1+]'), 
+                #
+                (mw + 21.9820 + PROTON, 'M+Na[1+]'),    # Na = 21.9820 + PROTON = 22.9893
                 (mw/2 + 10.991 + PROTON, 'M+H+Na[2+]'),
-                (mw + 37.9555 + PROTON, 'M+K[1+]'), 
+                (mw + 37.9555 + PROTON, 'M+K[1+]'),     # K = 37.9555 + PROTON = 38.9628
+                #
                 (mw + 18.0106 + PROTON, 'M+H2O+H[1+]'), 
                 (mw - 18.0106 + PROTON, 'M-H2O+H[1+]'), 
                 (mw - 36.0212 + PROTON, 'M-H4O2+H[1+]'),
@@ -172,6 +174,7 @@ def adduct_function(mw, mode):
                 (mw - 46.0054 + PROTON, 'M-HCOOH+H[1+]'),
                 (mw + 67.9874 + PROTON, 'M+HCOONa[1+]'),
                 (mw - 67.9874 + PROTON, 'M-HCOONa+H[1+]'),
+                #
                 (mw + 57.9586 + PROTON, 'M+NaCl[1+]'), 
                 (mw - 72.0211 + PROTON, 'M-C3H4O2+H[1+]'),
                 (mw + 83.9613 + PROTON, 'M+HCOOK[1+]'),
@@ -192,9 +195,11 @@ def adduct_function(mw, mode):
                (mw + 1.0034 - PROTON, 'M(C13)-H[-]'),
                (mw + 1.9958 - PROTON, 'M(S34)-H[-]'),
                (mw + 1.9972 - PROTON, 'M(Cl37)-H[-]'),
-               (mw + 21.9820 - 2*PROTON, 'M+Na-2H[-]'),
-               (mw + 37.9555 - 2*PROTON, 'M+K-2H[-]'),
+               #
+               (mw + 22.9893 - 2*PROTON, 'M+Na-2H[-]'),
+               (mw + 38.9628 - 2*PROTON, 'M+K-2H[-]'),
                (mw - 18.0106 - PROTON, 'M-H2O-H[-]'),
+               #
                (mw + 34.9689, 'M+Cl[-]'),
                (mw + 36.9659, 'M+Cl37[-]'),
                (mw + 78.9183, 'M+Br[-]'),
